@@ -1,0 +1,7 @@
+{
+    "index_name": "amenagements-cyclables_index",
+    "id_path": "identifier",
+    "timestamp_path": "timestamp",
+    "centroid_path": "centroid",
+    "geometry_path": "geometry"
+}

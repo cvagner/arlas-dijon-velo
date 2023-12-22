@@ -1,0 +1,44 @@
+{
+  "mappings": {
+    "properties": {
+      "identifier": {
+        "type": "keyword"
+      },
+      "amenagement_cycle": {
+        "type": "text"
+      },
+      "amenagement_cycle_simplifie": {
+        "type": "text"
+      },
+      "avancement": {
+        "type": "text"
+      },
+      "sens_cycle_txt": {
+        "type": "text"
+      },
+      "hors_voirie": {
+        "type": "boolean"
+      },
+      "commune": {
+        "type": "text"
+      },
+      "creation_voie_cycle": {
+        "type": "boolean"
+      },
+      "geometry_len": {
+        "type": "float"
+      },
+      "timestamp": {
+        "type": "date",
+        "format": "strict_date"
+      },
+      "geometry": {
+        "type": "geo_shape"
+      },
+      "centroid": {
+        "type": "geo_point"
+      }
+    },
+    "dynamic": false
+  }
+}

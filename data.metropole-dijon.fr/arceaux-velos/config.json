@@ -1,0 +1,241 @@
+{
+  "arlas": {
+    "web": {
+      "contributors": [
+        {
+          "type": "map",
+          "identifier": "arceaux-velos_collection",
+          "name": "Map arceaux-velos_collection",
+          "collection": "arceaux-velos_collection",
+          "geo_query_op": "Intersects",
+          "geo_query_field": "geometry",
+          "icon": "check_box_outline_blank",
+          "layers_sources": [
+            {
+              "id": "arlas_id:Arceaux:1703235184302",
+              "name": "Arceaux",
+              "source": "feature-geometry-wide-arceaux-velos_collection",
+              "minzoom": 1,
+              "maxzoom": 23,
+              "include_fields": [],
+              "short_form_fields": [],
+              "colors_from_fields": [],
+              "provided_fields": [],
+              "normalization_fields": [],
+              "metrics": [],
+              "maxfeatures": 5000,
+              "returned_geometry": "geometry",
+              "render_mode": "wide"
+            },
+            {
+              "id": "arlas_id:Arceaux libellés:1703235424421",
+              "name": "Arceaux libellés",
+              "source": "feature-geometry-wide-arceaux-velos_collection",
+              "minzoom": 13,
+              "maxzoom": 23,
+              "include_fields": [
+                "nombre_arceaux",
+                "nombre_arceaux"
+              ],
+              "short_form_fields": [],
+              "colors_from_fields": [],
+              "provided_fields": [],
+              "normalization_fields": [],
+              "metrics": [],
+              "filters": [
+                {
+                  "field": "nombre_arceaux",
+                  "op": "NOT_EQUAL",
+                  "value": "1"
+                }
+              ],
+              "maxfeatures": 5000,
+              "returned_geometry": "geometry",
+              "render_mode": "wide"
+            }
+          ]
+        },
+        {
+          "type": "chipssearch",
+          "identifier": "chipssearch",
+          "collection": "arceaux-velos_collection",
+          "search_field": "internal.fulltext",
+          "name": "Recherche",
+          "icon": "search",
+          "autocomplete_field": "internal.autocomplete",
+          "autocomplete_size": 10
+        },
+        {
+          "type": "histogram",
+          "identifier": "timeline",
+          "collection": "arceaux-velos_collection",
+          "name": "Timeline",
+          "icon": "watch_later",
+          "isOneDimension": false,
+          "useUtc": true,
+          "numberOfBuckets": 50,
+          "aggregationmodels": [
+            {
+              "type": "datehistogram",
+              "field": "timestamp"
+            }
+          ],
+          "additionalCollections": []
+        }
+      ],
+      "components": {
+        "timeline": {
+          "contributorId": "timeline",
+          "componentType": "histogram",
+          "input": {
+            "id": "histogram-timeline",
+            "xTicks": 9,
+            "yTicks": 2,
+            "xLabels": 9,
+            "yLabels": 2,
+            "xUnit": "",
+            "yUnit": "",
+            "chartXLabel": "",
+            "shortYLabels": false,
+            "chartTitle": "Timeline",
+            "customizedCssClass": "arlas-timeline",
+            "multiselectable": true,
+            "brushHandlesHeightWeight": 0.8,
+            "dataType": "time",
+            "isHistogramSelectable": true,
+            "ticksDateFormat": "%d %b %Y  %H:%M",
+            "chartType": "bars",
+            "chartHeight": 128,
+            "chartWidth": null,
+            "xAxisPosition": "bottom",
+            "yAxisStartsFromZero": true,
+            "descriptionPosition": "top",
+            "showXTicks": true,
+            "showYTicks": true,
+            "showXLabels": true,
+            "showYLabels": true,
+            "showHorizontalLines": false,
+            "isSmoothedCurve": true,
+            "barWeight": 0.8,
+            "topOffsetRemoveInterval": 10
+          }
+        },
+        "mapgl": {
+          "allowMapExtend": true,
+          "nbVerticesLimit": 100,
+          "input": {
+            "defaultBasemapStyle": {
+              "name": "Basic",
+              "styleFile": "https://api.maptiler.com/maps/basic/style.json?key=xIhbu1RwgdbxfZNmoXn4",
+              "image": "https://cloud.maptiler.com/static/img/maps/basic.png"
+            },
+            "basemapStyles": [
+              {
+                "name": "Basic",
+                "styleFile": "https://api.maptiler.com/maps/basic/style.json?key=xIhbu1RwgdbxfZNmoXn4",
+                "image": "https://cloud.maptiler.com/static/img/maps/basic.png"
+              }
+            ],
+            "margePanForLoad": 5,
+            "margePanForTest": 5,
+            "initZoom": 12,
+            "initCenter": [
+              5.01,
+              47.31
+            ],
+            "displayScale": true,
+            "displayCurrentCoordinates": true,
+            "idFeatureField": "deprecated, to be removed",
+            "mapLayers": {
+              "layers": [],
+              "events": {
+                "zoomOnClick": [],
+                "emitOnClick": [],
+                "onHover": []
+              },
+              "externalEventLayers": []
+            },
+            "visualisations_sets": [
+              {
+                "name": "All layers",
+                "layers": [
+                  "arlas_id:Arceaux libellés:1703235424421",
+                  "arlas_id:Arceaux:1703235184302"
+                ],
+                "enabled": true
+              }
+            ]
+          }
+        },
+        "resultlists": [],
+        "share": {
+          "geojson": {
+            "max_for_feature": 5000,
+            "max_for_topology": 5000,
+            "sort_excluded_type": [
+              "TEXT",
+              "GEO_POINT"
+            ]
+          }
+        },
+        "download": {}
+      },
+      "analytics": [],
+      "colorGenerator": {
+        "keysToColors": []
+      },
+      "options": {
+        "drag_items": true,
+        "zoom_to_data": true,
+        "indicators": true,
+        "spinner": {
+          "show": true,
+          "color": "accent",
+          "diameter": 50
+        },
+        "tabs": []
+      },
+      "externalNode": {}
+    },
+    "server": {
+      "url": "http://localhost:81/server/",
+      "max_age_cache": 120,
+      "collection": {
+        "name": "arceaux-velos_collection"
+      }
+    }
+  },
+  "arlas-wui": {
+    "web": {
+      "app": {
+        "components": {
+          "chipssearch": {
+            "name": "Recherche",
+            "icon": "search"
+          }
+        },
+        "name": "ARLAS",
+        "units": [
+          {
+            "collection": "arceaux-velos_collection",
+            "unit": "arceau(x)",
+            "ignored": false
+          }
+        ],
+        "name_background_color": "#FF4081"
+      }
+    }
+  },
+  "extraConfigs": [
+    {
+      "configPath": "config.map.json",
+      "replacedAttribute": "arlas.web.components.mapgl.input.mapLayers.layers",
+      "replacer": "layers"
+    },
+    {
+      "configPath": "config.map.json",
+      "replacedAttribute": "arlas.web.components.mapgl.input.mapLayers.externalEventLayers",
+      "replacer": "external-event-layers"
+    }
+  ]
+}

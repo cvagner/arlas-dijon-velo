@@ -1,0 +1,38 @@
+{
+  "mappings": {
+    "properties": {
+      "identifier": {
+        "type": "keyword"
+      },
+      "adresse": {
+        "type": "text"
+      },
+      "nombre_arceaux": {
+        "type": "integer"
+      },
+      "type_attache": {
+        "type": "text"
+      },
+      "observations": {
+        "type": "text"
+      },
+      "commune": {
+        "type": "text"
+      },
+      "type": {
+        "type": "text"
+      },
+      "nombre_arceaux_supp": {
+        "type": "float"
+      },
+      "timestamp": {
+        "type": "date",
+        "format": "yyyy"
+      },
+      "geometry": {
+        "type": "geo_point"
+      }
+    },
+    "dynamic": false
+  }
+}

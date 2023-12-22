@@ -1,0 +1,154 @@
+{
+  "layers": [
+    {
+      "id": "arlas_id:Arceaux:1703235184302",
+      "type": "circle",
+      "source": "feature-geometry-wide-arceaux-velos_collection",
+      "minzoom": 1,
+      "maxzoom": 23,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "circle-opacity": 1,
+        "circle-color": "#5dc30f",
+        "circle-radius": 10,
+        "circle-stroke-width": 1,
+        "circle-stroke-color": "#fff",
+        "circle-stroke-opacity": 1
+      },
+      "metadata": {
+        "collection": "arceaux-velos_collection",
+        "collection-display-name": "arceaux-velos_collection",
+        "is-scrollable-layer": false
+      },
+      "filter": [
+        "all",
+        [
+          "all"
+        ]
+      ]
+    },
+    {
+      "id": "arlas_id:Arceaux libellés:1703235424421",
+      "type": "symbol",
+      "source": "feature-geometry-wide-arceaux-velos_collection",
+      "minzoom": 13,
+      "maxzoom": 23,
+      "layout": {
+        "visibility": "visible",
+        "text-field": [
+          "get",
+          "nombre_arceaux"
+        ],
+        "text-font": [
+          "Open Sans Bold",
+          "Arial Unicode MS Bold"
+        ],
+        "text-size": 12,
+        "text-rotate": 0,
+        "text-allow-overlap": true,
+        "text-anchor": "center",
+        "symbol-placement": "point"
+      },
+      "paint": {
+        "text-color": "#ffffff",
+        "text-opacity": 1,
+        "text-halo-color": "#000",
+        "text-halo-width": 0,
+        "text-halo-blur": 0,
+        "text-translate": [
+          0,
+          0
+        ]
+      },
+      "metadata": {
+        "collection": "arceaux-velos_collection",
+        "collection-display-name": "arceaux-velos_collection",
+        "is-scrollable-layer": false
+      },
+      "filter": [
+        "all",
+        [
+          "!=",
+          [
+            "get",
+            "nombre_arceaux"
+          ],
+          1
+        ],
+        [
+          "all"
+        ]
+      ]
+    },
+    {
+      "id": "arlas-select-arlas_id:Arceaux:1703235184302",
+      "type": "circle",
+      "source": "feature-geometry-wide-arceaux-velos_collection",
+      "minzoom": 1,
+      "maxzoom": 23,
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "circle-opacity": 1,
+        "circle-color": "#5dc30f",
+        "circle-radius": 10,
+        "circle-stroke-width": 13,
+        "circle-stroke-color": "#fff",
+        "circle-stroke-opacity": 1
+      },
+      "metadata": {
+        "collection": "arceaux-velos_collection",
+        "collection-display-name": "arceaux-velos_collection",
+        "is-scrollable-layer": false
+      },
+      "filter": [
+        "all",
+        [
+          "all"
+        ]
+      ]
+    },
+    {
+      "id": "arlas-hover-arlas_id:Arceaux:1703235184302",
+      "type": "circle",
+      "source": "feature-geometry-wide-arceaux-velos_collection",
+      "minzoom": 1,
+      "maxzoom": 23,
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "circle-opacity": 1,
+        "circle-color": "#5dc30f",
+        "circle-radius": 10,
+        "circle-stroke-width": 13,
+        "circle-stroke-color": "#fff",
+        "circle-stroke-opacity": 1
+      },
+      "metadata": {
+        "collection": "arceaux-velos_collection",
+        "collection-display-name": "arceaux-velos_collection",
+        "is-scrollable-layer": false
+      },
+      "filter": [
+        "all",
+        [
+          "all"
+        ]
+      ]
+    }
+  ],
+  "external-event-layers": [
+    {
+      "id": "arlas-hover-arlas_id:Arceaux:1703235184302",
+      "on": "hover"
+    },
+    {
+      "id": "arlas-select-arlas_id:Arceaux:1703235184302",
+      "on": "select"
+    }
+  ]
+}

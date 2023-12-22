@@ -1,0 +1,7 @@
+{
+    "index_name": "arceaux-velos_index",
+    "id_path": "identifier",
+    "timestamp_path": "timestamp",
+    "centroid_path": "geometry",
+    "geometry_path": "geometry"
+}

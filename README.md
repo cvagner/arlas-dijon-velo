@@ -3,15 +3,11 @@
 Ceci est un projet de tests de la solution de Visualisation Geo BigData **Arlas Exploration** de [Gisaïa](https://github.com/gisaia).
 Consulter [cette documentation](https://docs.arlas.io/arlas-quick-start/) pour démarrer avec les exemples fournis dans le projet original.
 
+## Le tableau de bord `Vélo à Dijon !`
+
 Pour ce projet, les données chargées proviennent d'[Open Dijon](https://data.metropole-dijon.fr/pages/portal-explore/). L'objectif est de construire le tableau de bord suivant :
 
 ![Vélo à Dijon](Vélo-à-Dijon.png)
-
-Dans la suite, nous allons créer :
-* une composition de services elasticsearch et arlas (`server`, `hub`, `wui`, `wui-builder`, etc.)
-* 2 index elasticsearch chargés avec logstash
-* 2 collections arlas
-* 3 tableaux de bord arlas
 
 Dans le tableau de bord final `Vélo à Dijon !`, nous retrouverons :
 * **Des couches** composant la carte :
@@ -30,10 +26,16 @@ Dans le tableau de bord final `Vélo à Dijon !`, nous retrouverons :
 * **Un tableau de données** sur la droite, synchronisé avec les aménagements affichés sur la carte
 * **Une timeline** sous la carte avec les dates d'aménagements et la possibilité de filtrer sur une période
 
-La suite décrit une manière d'arriver à ce résultat. Les fichiers `nginx.conf`, `env.sh`, `start.sh` et `stop.sh` proviennent du projet [ARLAS-Exploration-stack](https://github.com/gisaia/ARLAS-Exploration-stack.git), le fichier `docker-compose.yml` en est inspiré et le reste est spécifique au jeu de données.
+## Les éléments configurés
 
-Prérequis :
-* docker
+Dans la suite, nous allons créer :
+* une composition de services elasticsearch et arlas (`server`, `hub`, `wui`, `wui-builder`, etc.) `docker-compose.yml`
+* des index elasticsearch `es_mapping.json`
+* des job d'intégation logstash `2es.logstash.conf`
+* des collections arlas `collection.json`
+* des tableaus de bords arlas `config.json` et `config.map.json`
+
+Les fichiers `nginx.conf`, `env.sh`, `start.sh` et `stop.sh` proviennent du projet [ARLAS-Exploration-stack](https://github.com/gisaia/ARLAS-Exploration-stack.git), le fichier `docker-compose.yml` en est inspiré et le reste est spécifique au jeu de données. La seule dépendance nécessaire est docker.
 
 ## Démarrer Arlas et ses dépendances
 
@@ -49,7 +51,7 @@ bash ./start.sh
 
 Les URLs exposées sont affichées dans le terminal. On retiendra http://localhost:81/hub/ comme point d'entrée.
 
-## Récupérer les dernières données (facultatif)
+### Récupérer les dernières données (facultatif)
 
 Deux jeux de données de https://data.metropole-dijon.fr/pages/portal-explore/ sont exploités :
 * `Aménagements cyclables`
@@ -64,7 +66,7 @@ curl -L -o data.metropole-dijon.fr/amenagements-cyclables/data.csv "https://data
 curl -L -o data.metropole-dijon.fr/arceaux-velos/data.csv "https://data.metropole-dijon.fr/api/explore/v2.1/catalog/datasets/arceaux-velos/exports/csv?lang=fr&timezone=Europe%2FBerlin&use_labels=true&delimiter=%3B"
 ```
 
-## Indexer les données et créer les visualisations
+### Indexer les données et créer les visualisations
 ### Définition des fonctions utilitaires
 
 Exécuter les commandes suivantes, qui définissent les fonctions :
@@ -133,7 +135,7 @@ checkArlasCollection() {
 }
 ```
 
-### Aménagements cyclables
+#### Aménagements cyclables
 
 ```sh
 DATASET_BASE_PATH=data.metropole-dijon.fr/amenagements-cyclables
@@ -157,7 +159,7 @@ Importer le tableau de bord (opération manuelle) :
 Puis l'ouvrir :
 * http://localhost:81/wui
 
-### Arceaux vélos
+#### Arceaux vélos
 
 ```sh
 DATASET_BASE_PATH=data.metropole-dijon.fr/arceaux-velos
@@ -181,7 +183,7 @@ Importer le tableau de bord (opération manuelle) :
 Puis l'ouvrir :
 * http://localhost:81/wui
 
-### Tableau de bord général (pistes aménagées et arceaux)
+#### Tableau de bord général (pistes aménagées et arceaux)
 
 Importer le tableau de bord (opération manuelle) :
 * http://localhost:81/builder/load/import
@@ -192,7 +194,7 @@ Importer le tableau de bord (opération manuelle) :
 Puis l'ouvrir :
 * http://localhost:81/wui
 
-## Nettoyage
+### Nettoyage
 
 ```sh
 # Conteneurs : le script stop.sh les arrête et les supprime

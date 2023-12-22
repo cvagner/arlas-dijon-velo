@@ -1,0 +1,403 @@
+{
+  "layers": [
+    {
+      "id": "arlas_id:Aménagement:1703200495667",
+      "type": "line",
+      "source": "feature-geometry-wide-amenagements-cyclables_collection",
+      "minzoom": 1,
+      "maxzoom": 23,
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-opacity": 1,
+        "line-color": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "get",
+            "geometry_len:normalized"
+          ],
+          0,
+          "#53d9e8",
+          0.2,
+          "#29AFFB",
+          0.4,
+          "#2874FA",
+          0.6,
+          "#3b69fa",
+          0.8,
+          "#eb79fc",
+          1,
+          "#ef586c"
+        ],
+        "line-width": 4
+      },
+      "metadata": {
+        "collection": "amenagements-cyclables_collection",
+        "collection-display-name": "amenagements-cyclables_collection",
+        "is-scrollable-layer": false
+      },
+      "filter": [
+        "all",
+        [
+          "all",
+          [
+            "<",
+            [
+              "get",
+              "geometry_len:normalized"
+            ],
+            1.7976931348623157e+308
+          ],
+          [
+            ">",
+            [
+              "get",
+              "geometry_len:normalized"
+            ],
+            -1.7976931348623157e+308
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "arlas_id:Positions:1703198858348",
+      "type": "fill",
+      "source": "cluster-centroid-Fine-tile-cell-amenagements-cyclables_collection",
+      "minzoom": 1,
+      "maxzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-opacity": 0.7,
+        "fill-color": "#f50bdb"
+      },
+      "metadata": {
+        "collection": "amenagements-cyclables_collection",
+        "collection-display-name": "amenagements-cyclables_collection",
+        "stroke": {
+          "color": "#ffffff",
+          "width": 1,
+          "opacity": 1
+        }
+      },
+      "filter": [
+        "all",
+        [
+          "all"
+        ]
+      ]
+    },
+    {
+      "id": "arlas_id:Arceaux:1703236012899",
+      "type": "circle",
+      "source": "feature-geometry-wide-arceaux-velos_collection",
+      "minzoom": 1,
+      "maxzoom": 23,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "circle-opacity": 1,
+        "circle-color": "#5dc30f",
+        "circle-radius": 10,
+        "circle-stroke-width": 1,
+        "circle-stroke-color": "#fff",
+        "circle-stroke-opacity": 1
+      },
+      "metadata": {
+        "collection": "arceaux-velos_collection",
+        "collection-display-name": "arceaux-velos_collection",
+        "is-scrollable-layer": false
+      },
+      "filter": [
+        "all",
+        [
+          "all"
+        ]
+      ]
+    },
+    {
+      "id": "arlas_id:Arceaux libellés:1703236025352",
+      "type": "symbol",
+      "source": "feature-geometry-wide-arceaux-velos_collection",
+      "minzoom": 13,
+      "maxzoom": 23,
+      "layout": {
+        "visibility": "visible",
+        "text-field": [
+          "get",
+          "nombre_arceaux"
+        ],
+        "text-font": [
+          "Open Sans Bold",
+          "Arial Unicode MS Bold"
+        ],
+        "text-size": 12,
+        "text-rotate": 0,
+        "text-allow-overlap": true,
+        "text-anchor": "center",
+        "symbol-placement": "point"
+      },
+      "paint": {
+        "text-color": "#ffffff",
+        "text-opacity": 1,
+        "text-halo-color": "#000",
+        "text-halo-width": 0,
+        "text-halo-blur": 0,
+        "text-translate": [
+          0,
+          0
+        ]
+      },
+      "metadata": {
+        "collection": "arceaux-velos_collection",
+        "collection-display-name": "arceaux-velos_collection",
+        "is-scrollable-layer": false
+      },
+      "filter": [
+        "all",
+        [
+          "!=",
+          [
+            "get",
+            "nombre_arceaux"
+          ],
+          1
+        ],
+        [
+          "all"
+        ]
+      ]
+    },
+    {
+      "id": "arlas-select-arlas_id:Aménagement:1703200495667",
+      "type": "line",
+      "source": "feature-geometry-wide-amenagements-cyclables_collection",
+      "minzoom": 1,
+      "maxzoom": 23,
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "line-opacity": 1,
+        "line-color": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "get",
+            "geometry_len:normalized"
+          ],
+          0,
+          "#53d9e8",
+          0.2,
+          "#29AFFB",
+          0.4,
+          "#2874FA",
+          0.6,
+          "#3b69fa",
+          0.8,
+          "#eb79fc",
+          1,
+          "#ef586c"
+        ],
+        "line-width": 16
+      },
+      "metadata": {
+        "collection": "amenagements-cyclables_collection",
+        "collection-display-name": "amenagements-cyclables_collection",
+        "is-scrollable-layer": false
+      },
+      "filter": [
+        "all",
+        [
+          "all",
+          [
+            "<",
+            [
+              "get",
+              "geometry_len:normalized"
+            ],
+            1.7976931348623157e+308
+          ],
+          [
+            ">",
+            [
+              "get",
+              "geometry_len:normalized"
+            ],
+            -1.7976931348623157e+308
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "arlas-select-arlas_id:Arceaux:1703236012899",
+      "type": "circle",
+      "source": "feature-geometry-wide-arceaux-velos_collection",
+      "minzoom": 1,
+      "maxzoom": 23,
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "circle-opacity": 1,
+        "circle-color": "#5dc30f",
+        "circle-radius": 10,
+        "circle-stroke-width": 13,
+        "circle-stroke-color": "#fff",
+        "circle-stroke-opacity": 1
+      },
+      "metadata": {
+        "collection": "arceaux-velos_collection",
+        "collection-display-name": "arceaux-velos_collection",
+        "is-scrollable-layer": false
+      },
+      "filter": [
+        "all",
+        [
+          "all"
+        ]
+      ]
+    },
+    {
+      "id": "arlas-hover-arlas_id:Aménagement:1703200495667",
+      "type": "line",
+      "source": "feature-geometry-wide-amenagements-cyclables_collection",
+      "minzoom": 1,
+      "maxzoom": 23,
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "line-opacity": 1,
+        "line-color": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "get",
+            "geometry_len:normalized"
+          ],
+          0,
+          "#53d9e8",
+          0.2,
+          "#29AFFB",
+          0.4,
+          "#2874FA",
+          0.6,
+          "#3b69fa",
+          0.8,
+          "#eb79fc",
+          1,
+          "#ef586c"
+        ],
+        "line-width": 16
+      },
+      "metadata": {
+        "collection": "amenagements-cyclables_collection",
+        "collection-display-name": "amenagements-cyclables_collection",
+        "is-scrollable-layer": false
+      },
+      "filter": [
+        "all",
+        [
+          "all",
+          [
+            "<",
+            [
+              "get",
+              "geometry_len:normalized"
+            ],
+            1.7976931348623157e+308
+          ],
+          [
+            ">",
+            [
+              "get",
+              "geometry_len:normalized"
+            ],
+            -1.7976931348623157e+308
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "arlas-hover-arlas_id:Arceaux:1703236012899",
+      "type": "circle",
+      "source": "feature-geometry-wide-arceaux-velos_collection",
+      "minzoom": 1,
+      "maxzoom": 23,
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "circle-opacity": 1,
+        "circle-color": "#5dc30f",
+        "circle-radius": 10,
+        "circle-stroke-width": 13,
+        "circle-stroke-color": "#fff",
+        "circle-stroke-opacity": 1
+      },
+      "metadata": {
+        "collection": "arceaux-velos_collection",
+        "collection-display-name": "arceaux-velos_collection",
+        "is-scrollable-layer": false
+      },
+      "filter": [
+        "all",
+        [
+          "all"
+        ]
+      ]
+    },
+    {
+      "source": "cluster-centroid-Fine-tile-cell-amenagements-cyclables_collection",
+      "id": "arlas-fill_stroke-Positions:1703198858348",
+      "type": "line",
+      "maxzoom": 8,
+      "filter": [
+        "all",
+        [
+          "all"
+        ]
+      ],
+      "minzoom": 1,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "#ffffff",
+        "line-opacity": 1,
+        "line-width": 1
+      }
+    }
+  ],
+  "external-event-layers": [
+    {
+      "id": "arlas-hover-arlas_id:Aménagement:1703200495667",
+      "on": "hover"
+    },
+    {
+      "id": "arlas-hover-arlas_id:Arceaux:1703236012899",
+      "on": "hover"
+    },
+    {
+      "id": "arlas-select-arlas_id:Aménagement:1703200495667",
+      "on": "select"
+    },
+    {
+      "id": "arlas-select-arlas_id:Arceaux:1703236012899",
+      "on": "select"
+    }
+  ]
+}

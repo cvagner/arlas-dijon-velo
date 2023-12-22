@@ -1,0 +1,502 @@
+{
+  "arlas": {
+    "web": {
+      "contributors": [
+        {
+          "type": "map",
+          "identifier": "amenagements-cyclables_collection",
+          "name": "Map amenagements-cyclables_collection",
+          "collection": "amenagements-cyclables_collection",
+          "geo_query_op": "Intersects",
+          "geo_query_field": "geometry",
+          "icon": "check_box_outline_blank",
+          "layers_sources": [
+            {
+              "id": "arlas_id:Aménagement:1703200495667",
+              "name": "Aménagement",
+              "source": "feature-geometry-wide-amenagements-cyclables_collection",
+              "minzoom": 1,
+              "maxzoom": 23,
+              "include_fields": [],
+              "short_form_fields": [],
+              "colors_from_fields": [],
+              "provided_fields": [],
+              "normalization_fields": [
+                {
+                  "on": "geometry_len"
+                }
+              ],
+              "metrics": [],
+              "maxfeatures": 5000,
+              "returned_geometry": "geometry",
+              "render_mode": "wide"
+            },
+            {
+              "id": "arlas_id:Positions:1703198858348",
+              "name": "Positions",
+              "source": "cluster-centroid-Fine-tile-cell-amenagements-cyclables_collection",
+              "minzoom": 1,
+              "maxzoom": 8,
+              "include_fields": [],
+              "short_form_fields": [],
+              "colors_from_fields": [],
+              "provided_fields": [],
+              "normalization_fields": [],
+              "metrics": [],
+              "agg_geo_field": "centroid",
+              "aggType": "tile",
+              "granularity": "Fine",
+              "minfeatures": 100,
+              "aggregated_geometry": "cell"
+            }
+          ]
+        },
+        {
+          "type": "map",
+          "identifier": "arceaux-velos_collection",
+          "name": "Map arceaux-velos_collection",
+          "collection": "arceaux-velos_collection",
+          "geo_query_op": "Intersects",
+          "geo_query_field": "geometry",
+          "icon": "check_box_outline_blank",
+          "layers_sources": [
+            {
+              "id": "arlas_id:Arceaux:1703236012899",
+              "name": "Arceaux",
+              "source": "feature-geometry-wide-arceaux-velos_collection",
+              "minzoom": 1,
+              "maxzoom": 23,
+              "include_fields": [],
+              "short_form_fields": [],
+              "colors_from_fields": [],
+              "provided_fields": [],
+              "normalization_fields": [],
+              "metrics": [],
+              "maxfeatures": 5000,
+              "returned_geometry": "geometry",
+              "render_mode": "wide"
+            },
+            {
+              "id": "arlas_id:Arceaux libellés:1703236025352",
+              "name": "Arceaux libellés",
+              "source": "feature-geometry-wide-arceaux-velos_collection",
+              "minzoom": 13,
+              "maxzoom": 23,
+              "include_fields": [
+                "nombre_arceaux",
+                "nombre_arceaux"
+              ],
+              "short_form_fields": [],
+              "colors_from_fields": [],
+              "provided_fields": [],
+              "normalization_fields": [],
+              "metrics": [],
+              "filters": [
+                {
+                  "field": "nombre_arceaux",
+                  "op": "NOT_EQUAL",
+                  "value": "1"
+                }
+              ],
+              "maxfeatures": 5000,
+              "returned_geometry": "geometry",
+              "render_mode": "wide"
+            }
+          ]
+        },
+        {
+          "type": "chipssearch",
+          "identifier": "chipssearch",
+          "collection": "amenagements-cyclables_collection",
+          "search_field": "internal.fulltext",
+          "name": "Search...",
+          "icon": "search",
+          "autocomplete_field": "internal.autocomplete",
+          "autocomplete_size": 10
+        },
+        {
+          "type": "histogram",
+          "identifier": "timeline",
+          "collection": "amenagements-cyclables_collection",
+          "name": "Timeline",
+          "icon": "watch_later",
+          "isOneDimension": false,
+          "useUtc": true,
+          "numberOfBuckets": 30,
+          "aggregationmodels": [
+            {
+              "type": "datehistogram",
+              "field": "timestamp"
+            }
+          ],
+          "additionalCollections": []
+        },
+        {
+          "identifier": "amenagements-cyclables_collection-identifier-50-Date d'enregistrement-Longueur-",
+          "name": "Taleau",
+          "title": "Taleau",
+          "collection": "amenagements-cyclables_collection",
+          "icon": "table_chart",
+          "type": "resultlist",
+          "search_size": 50,
+          "fieldsConfiguration": {
+            "idFieldName": "identifier",
+            "titleFieldNames": [
+              {
+                "fieldPath": "",
+                "process": ""
+              }
+            ],
+            "tooltipFieldNames": [
+              {
+                "fieldPath": "",
+                "process": ""
+              }
+            ],
+            "iconColorFieldName": "",
+            "useHttpQuicklooks": false,
+            "urlImageTemplates": []
+          },
+          "columns": [
+            {
+              "columnName": "Date d'enregistrement",
+              "fieldName": "timestamp",
+              "dataType": "",
+              "process": "",
+              "useColorService": false,
+              "sort": ""
+            },
+            {
+              "columnName": "Longueur",
+              "fieldName": "geometry_len",
+              "dataType": " (m)",
+              "process": "",
+              "useColorService": false,
+              "sort": ""
+            }
+          ],
+          "details": [],
+          "includeMetadata": []
+        },
+        {
+          "identifier": "amenagements-cyclables_collection-geometry_len-sum-0",
+          "name": "longueur totale",
+          "title": "longueur totale",
+          "collection": "amenagements-cyclables_collection",
+          "icon": "poll",
+          "type": "metric",
+          "function": "m[0]",
+          "metrics": [
+            {
+              "field": "geometry_len",
+              "metric": "sum",
+              "filter": {
+                "righthand": false
+              }
+            }
+          ]
+        },
+        {
+          "identifier": "amenagements-cyclables_collection-timestamp-time-bucket-SUM-geometry_len-10",
+          "name": "nouveaux aménagements",
+          "title": "nouveaux aménagements",
+          "collection": "amenagements-cyclables_collection",
+          "icon": "poll",
+          "charttype": "area",
+          "isOneDimension": false,
+          "type": "histogram",
+          "numberOfBuckets": 10,
+          "jsonpath": "$.metrics[0].value",
+          "useUtc": true,
+          "aggregationmodels": [
+            {
+              "type": "datehistogram",
+              "field": "timestamp",
+              "metrics": [
+                {
+                  "collect_fct": "sum",
+                  "collect_field": "geometry_len"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "components": {
+        "timeline": {
+          "contributorId": "timeline",
+          "componentType": "histogram",
+          "input": {
+            "id": "histogram-timeline",
+            "xTicks": 9,
+            "yTicks": 2,
+            "xLabels": 9,
+            "yLabels": 2,
+            "xUnit": "",
+            "yUnit": "",
+            "chartXLabel": "",
+            "shortYLabels": false,
+            "chartTitle": "Timeline",
+            "customizedCssClass": "arlas-timeline",
+            "multiselectable": true,
+            "brushHandlesHeightWeight": 0.8,
+            "dataType": "time",
+            "isHistogramSelectable": true,
+            "ticksDateFormat": "%d %b %Y  %H:%M",
+            "chartType": "bars",
+            "chartHeight": 128,
+            "chartWidth": null,
+            "xAxisPosition": "bottom",
+            "yAxisStartsFromZero": true,
+            "descriptionPosition": "top",
+            "showXTicks": true,
+            "showYTicks": true,
+            "showXLabels": true,
+            "showYLabels": true,
+            "showHorizontalLines": false,
+            "isSmoothedCurve": true,
+            "barWeight": 0.8,
+            "topOffsetRemoveInterval": 10
+          }
+        },
+        "mapgl": {
+          "allowMapExtend": true,
+          "nbVerticesLimit": 100,
+          "input": {
+            "defaultBasemapStyle": {
+              "name": "Bright",
+              "styleFile": "https://api.maptiler.com/maps/bright/style.json?key=xIhbu1RwgdbxfZNmoXn4",
+              "image": "https://cloud.maptiler.com/static/img/maps/bright.png"
+            },
+            "basemapStyles": [
+              {
+                "name": "Bright",
+                "styleFile": "https://api.maptiler.com/maps/bright/style.json?key=xIhbu1RwgdbxfZNmoXn4",
+                "image": "https://cloud.maptiler.com/static/img/maps/bright.png"
+              },
+              {
+                "name": "Pastel",
+                "styleFile": "https://api.maptiler.com/maps/pastel/style.json?key=xIhbu1RwgdbxfZNmoXn4",
+                "image": "https://cloud.maptiler.com/static/img/maps/pastel.png"
+              },
+              {
+                "name": "Satellite Hybrid",
+                "styleFile": "https://api.maptiler.com/maps/hybrid/style.json?key=xIhbu1RwgdbxfZNmoXn4",
+                "image": "https://cloud.maptiler.com/static/img/maps/hybrid.png"
+              },
+              {
+                "name": "Topographique",
+                "styleFile": "https://api.maptiler.com/maps/topographique/style.json?key=xIhbu1RwgdbxfZNmoXn4",
+                "image": "https://cloud.maptiler.com/static/img/maps/topographique.png"
+              }
+            ],
+            "margePanForLoad": 5,
+            "margePanForTest": 5,
+            "initZoom": 11,
+            "initCenter": [
+              5.01,
+              47.31
+            ],
+            "displayScale": true,
+            "displayCurrentCoordinates": false,
+            "idFeatureField": "deprecated, to be removed",
+            "mapLayers": {
+              "layers": [],
+              "events": {
+                "zoomOnClick": [],
+                "emitOnClick": [],
+                "onHover": []
+              },
+              "externalEventLayers": []
+            },
+            "visualisations_sets": [
+              {
+                "name": "All layers",
+                "layers": [
+                  "arlas_id:Arceaux libellés:1703236025352",
+                  "arlas_id:Arceaux:1703236012899",
+                  "arlas_id:Positions:1703198858348",
+                  "arlas_id:Aménagement:1703200495667"
+                ],
+                "enabled": true
+              }
+            ]
+          }
+        },
+        "resultlists": [
+          {
+            "contributorId": "amenagements-cyclables_collection-identifier-50-Date d'enregistrement-Longueur-",
+            "componentType": "resultlist",
+            "input": {
+              "id": "amenagements-cyclables_collection-identifier-50-Date d'enregistrement-Longueur-",
+              "tableWidth": 445,
+              "globalActionsList": [],
+              "searchSize": 50,
+              "nLastLines": 3,
+              "detailedGridHeight": 300,
+              "nbGridColumns": 3,
+              "displayFilters": false,
+              "hasGridMode": false,
+              "defautMode": "list",
+              "visualisationLink": "",
+              "downloadLink": "",
+              "isBodyHidden": false,
+              "isGeoSortActived": false,
+              "isAutoGeoSortActived": null,
+              "selectedItemsEvent": null,
+              "consultedItemEvent": null,
+              "actionOnItemEvent": null,
+              "globalActionEvent": 300,
+              "useColorService": true,
+              "options": {
+                "showActionsOnhover": "true",
+                "showDetailIconName": "keyboard_arrow_down",
+                "hideDetailIconName": "keyboard_arrow_up",
+                "icon": "short_text",
+                "showName": true,
+                "showIcon": true
+              }
+            }
+          }
+        ],
+        "share": {
+          "geojson": {
+            "max_for_feature": 5000,
+            "max_for_topology": 5000,
+            "sort_excluded_type": [
+              "TEXT",
+              "GEO_POINT"
+            ]
+          }
+        },
+        "download": {}
+      },
+      "analytics": [
+        {
+          "groupId": "compte-0",
+          "title": "Métriques",
+          "tab": "compte",
+          "icon": "poll",
+          "components": [
+            {
+              "contributorId": "amenagements-cyclables_collection-geometry_len-sum-0",
+              "componentType": "metric",
+              "input": {
+                "customizedCssClass": "power",
+                "shortValue": false,
+                "valuePrecision": 0,
+                "chartWidth": 445,
+                "afterValue": "m"
+              }
+            },
+            {
+              "contributorId": "amenagements-cyclables_collection-timestamp-time-bucket-SUM-geometry_len-10",
+              "input": {
+                "id": "amenagements-cyclables_collection-timestamp-time-bucket-SUM-geometry_len-10",
+                "isHistogramSelectable": true,
+                "multiselectable": true,
+                "topOffsetRemoveInterval": 40,
+                "leftOffsetRemoveInterval": 18,
+                "brushHandlesHeightWeight": 0.8,
+                "yAxisStartsFromZero": true,
+                "chartType": "area",
+                "chartTitle": "nouveaux aménagements",
+                "chartHeight": 100,
+                "chartWidth": 445,
+                "xAxisPosition": "bottom",
+                "descriptionPosition": "bottom",
+                "xTicks": 4,
+                "yTicks": 1,
+                "xLabels": 4,
+                "yLabels": 4,
+                "xUnit": "",
+                "yUnit": "",
+                "chartXLabel": "",
+                "shortYLabels": false,
+                "showXTicks": true,
+                "showYTicks": true,
+                "showXLabels": true,
+                "showYLabels": true,
+                "showHorizontalLines": true,
+                "barWeight": 0.8,
+                "dataType": "time",
+                "ticksDateFormat": "%d %b %Y  %H:%M",
+                "customizedCssClass": "arlas-timeline-analytics",
+                "isSmoothedCurve": false
+              },
+              "componentType": "histogram",
+              "showExportCsv": ""
+            }
+          ]
+        }
+      ],
+      "colorGenerator": {
+        "keysToColors": []
+      },
+      "options": {
+        "drag_items": false,
+        "zoom_to_data": true,
+        "indicators": true,
+        "spinner": {
+          "show": true,
+          "color": "accent",
+          "diameter": 50
+        },
+        "tabs": [
+          {
+            "name": "compte",
+            "icon": "short_text",
+            "showIcon": true,
+            "showName": true
+          }
+        ]
+      },
+      "externalNode": {}
+    },
+    "server": {
+      "url": "http://localhost:81/server/",
+      "max_age_cache": 120,
+      "collection": {
+        "name": "amenagements-cyclables_collection"
+      }
+    }
+  },
+  "arlas-wui": {
+    "web": {
+      "app": {
+        "components": {
+          "chipssearch": {
+            "name": "Search...",
+            "icon": "search"
+          }
+        },
+        "name": "ARLAS",
+        "units": [
+          {
+            "collection": "amenagements-cyclables_collection",
+            "unit": "aménagement(s)",
+            "ignored": false
+          },
+          {
+            "collection": "arceaux-velos_collection",
+            "unit": "arceaux-velos_collection",
+            "ignored": false
+          }
+        ],
+        "name_background_color": "#FF4081"
+      }
+    }
+  },
+  "extraConfigs": [
+    {
+      "configPath": "config.map.json",
+      "replacedAttribute": "arlas.web.components.mapgl.input.mapLayers.layers",
+      "replacer": "layers"
+    },
+    {
+      "configPath": "config.map.json",
+      "replacedAttribute": "arlas.web.components.mapgl.input.mapLayers.externalEventLayers",
+      "replacer": "external-event-layers"
+    }
+  ]
+}
